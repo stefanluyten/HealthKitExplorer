@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
     let textCellIdentifier = "TextCell"
     let healthKitStore:HKHealthStore = HKHealthStore()
@@ -19,8 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var txtOutputBox: UITextView!
     
-    @IBOutlet weak var tableView: UITableView!
-    
     @IBAction func bntStart(sender: AnyObject) {
         print("btnStart() - Knop geklikt")
         let dateFormatter = NSDateFormatter()
@@ -28,13 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let fromDate = "2015-01-19T01:22:18.964Z"
         let toDate = "2015-02-19T01:22:18.964Z"
         
-        readHeartRateValues(fromDate,to: toDate, latestXSamples: 100)
+        readHeartRateValues(fromDate,to: toDate, latestXSamples: 1000)
     }
     
-    var output:[HKSample] = []
-    //let output = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
+    //var output:[HKSample] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -59,24 +55,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     print("Error")
                 } else {
                     self.ready = true
-                    print("Aantal resultaten: \(results!.count)")
-                    self.tableView.delegate = self
-                    self.tableView.dataSource = self
-                    self.output = results!
+                    //print("Aantal resultaten: \(results!.count)")
+
+                    //self.output = results!
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         var result: Int
-                        self.txtOutput.text = String(results?.count)
                         self.txtOutputBox.text = ""
                         for result in results! {
                             bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
                             timeStamp = formatter.stringFromDate(result.startDate)
-                            print(timeStamp + " - " + String(bpm))
+                            //print(timeStamp + " - " + String(bpm))
                             self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + String(bpm) + "\r\n"
                         }
                         
                     }
-                    self.tableView.reloadData()
                 
                 }
         }
@@ -85,22 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 0
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        
-        let row = indexPath.row
-        cell.textLabel?.text = output[row].description
 
-        return cell
-    }
 
 }
 

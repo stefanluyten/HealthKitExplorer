@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             readTypes: (dataTypesToRead as! Set<HKObjectType>),
             completion: { (success, error) -> Void in
                 if success {
-                    print("success")
+                    //print("success")
                 } else {
                     print(error!.description)
                 }
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func updateHeartBeat(){
-        print("lap!")
+    
     }
     
 
