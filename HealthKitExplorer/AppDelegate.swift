@@ -7,17 +7,83 @@
 //
 
 import UIKit
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let healthStore:HKHealthStore = HKHealthStore()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let healthStore: HKHealthStore? = {
+            if HKHealthStore.isHealthDataAvailable() {
+                return HKHealthStore()
+            } else {
+                return nil
+            }
+            }()
+        
+        let dateOfBirthCharacteristic = HKCharacteristicType.characteristicTypeForIdentifier(
+            HKCharacteristicTypeIdentifierDateOfBirth)
+        
+        let biologicalSexCharacteristic = HKCharacteristicType.characteristicTypeForIdentifier(
+            HKCharacteristicTypeIdentifierBiologicalSex)
+        
+        let bloodTypeCharacteristic = HKCharacteristicType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierBloodType)
+
+        let heartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+        
+        
+        //HKQuantityType *heartRate = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+        
+        let dataTypesToRead = NSSet(objects:
+            dateOfBirthCharacteristic!,
+            biologicalSexCharacteristic!,
+            bloodTypeCharacteristic!, heartRate!)
+        
+        healthStore?.requestAuthorizationToShareTypes(nil,
+            readTypes: (dataTypesToRead as! Set<HKObjectType>),
+            completion: { (success, error) -> Void in
+                if success {
+                    print("success")
+                } else {
+                    print(error!.description)
+                }
+        })
+         // ***********************************************************************
+        let sampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+        
+        let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) {
+            query, completionHandler, error in
+            
+            if error != nil {
+                
+                // Perform Proper Error Handling Here...
+                print("*** An error occured while setting up the hearthrate observer. \(error!.localizedDescription) ***")
+                abort()
+            }
+            
+            self.updateHeartBeat()
+            
+            // If you have subscribed for background updates you must call the completion handler here.
+            completionHandler()
+                        
+        }
+        
+        healthStore!.executeQuery(query)
+        
+        // *******************************************************************************
+        
         return true
     }
+    
+    func updateHeartBeat(){
+        print("lap!")
+    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
