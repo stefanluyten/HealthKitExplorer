@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let healthStore:HKHealthStore = HKHealthStore()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
         let healthStore: HKHealthStore? = {
             if HKHealthStore.isHealthDataAvailable() {
@@ -36,9 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let heartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
         
-        
-        //HKQuantityType *heartRate = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-        
+
         let dataTypesToRead = NSSet(objects:
             dateOfBirthCharacteristic!,
             biologicalSexCharacteristic!,
@@ -53,29 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(error!.description)
                 }
         })
-         // ***********************************************************************
-        let sampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
-        
-        let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) {
-            query, completionHandler, error in
-            
-            if error != nil {
-                
-                // Perform Proper Error Handling Here...
-                print("*** An error occured while setting up the hearthrate observer. \(error!.localizedDescription) ***")
-                abort()
-            }
-            
-            self.updateHeartBeat()
-            
-            // If you have subscribed for background updates you must call the completion handler here.
-            completionHandler()
-                        
-        }
-        
-        healthStore!.executeQuery(query)
-        
-        // *******************************************************************************
         
         return true
     }
