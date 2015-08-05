@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtOutput: UILabel!
     
     @IBOutlet weak var txtOutputBox: UITextView!
-
     
     @IBAction func bntStart(sender: AnyObject) {
         print("btnStart() - Knop geklikt")
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         let toDate = "2015-02-19T01:22:18.964Z"
         
         readHeartRateValues(fromDate,to: toDate, latestXSamples: 10)
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +40,6 @@ class ViewController: UIViewController {
         let sampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
         let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate.distantPast() , endDate: NSDate(), options: HKQueryOptions.None)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        
-
-
-
         
         let query = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: latestXSamples, sortDescriptors: [sortDescriptor])
         { (query, results, error) in
