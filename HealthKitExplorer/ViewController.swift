@@ -24,9 +24,12 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
         let fromDate = "2015-01-19T01:22:18.964Z"
         let toDate = "2015-02-19T01:22:18.964Z"
-        
-        readHeartRateValues(fromDate,to: toDate, latestXSamples: 1500)
+        self.view.endEditing(true)
+
+        readHeartRateValues(fromDate,to: toDate, latestXSamples: Int(txtNumber.text!)!)
     }
+    
+    @IBOutlet weak var txtNumber: UITextField!
     
     //var output:[HKSample] = []
 
@@ -66,6 +69,7 @@ class ViewController: UIViewController {
                             bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
                             timeStamp = formatter.stringFromDate(result.startDate)
                             timeStampEnd = formatterEnd.stringFromDate(result.endDate)
+                            self.txtOutputBox.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
                             self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + timeStampEnd + " : " + String(bpm) + "\r\n"
                         }
                         
