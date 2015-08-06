@@ -20,13 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtOutputBox: UITextView!
     
     @IBAction func bntStart(sender: AnyObject) {
-        print("btnStart() - Knop geklikt")
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
         let fromDate = "2015-01-19T01:22:18.964Z"
         let toDate = "2015-02-19T01:22:18.964Z"
         
-        readHeartRateValues(fromDate,to: toDate, latestXSamples: 1000)
+        readHeartRateValues(fromDate,to: toDate, latestXSamples: 1500)
     }
     
     //var output:[HKSample] = []
@@ -46,8 +45,12 @@ class ViewController: UIViewController {
         var bpm: Int = 0
         
         var formatter = NSDateFormatter();
+        var formatterEnd = NSDateFormatter();
+
         formatter.dateFormat = "dd/MM/yyyy HH:mm:ss";
+        formatterEnd.dateFormat = "HH:mm:ss";
         var timeStamp: String = ""
+        var timeStampEnd: String = ""
     
         let query = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: latestXSamples, sortDescriptors: [sortDescriptor])
         { (query, results, error) in
@@ -55,9 +58,6 @@ class ViewController: UIViewController {
                     print("Error")
                 } else {
                     self.ready = true
-                    //print("Aantal resultaten: \(results!.count)")
-
-                    //self.output = results!
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         var result: Int
@@ -65,8 +65,8 @@ class ViewController: UIViewController {
                         for result in results! {
                             bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
                             timeStamp = formatter.stringFromDate(result.startDate)
-                            //print(timeStamp + " - " + String(bpm))
-                            self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + String(bpm) + "\r\n"
+                            timeStampEnd = formatterEnd.stringFromDate(result.endDate)
+                            self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + timeStampEnd + " : " + String(bpm) + "\r\n"
                         }
                         
                     }
