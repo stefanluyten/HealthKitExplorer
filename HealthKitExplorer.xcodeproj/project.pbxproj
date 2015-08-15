@@ -14,7 +14,45 @@
 		F83E09D61B6FF8E7008CA3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F83E09D41B6FF8E7008CA3D0 /* LaunchScreen.storyboard */; };
 		F83E09DE1B6FFA1F008CA3D0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83E09DD1B6FFA1F008CA3D0 /* HealthKit.framework */; };
 		F83E09E11B70A9F8008CA3D0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E09E01B70A9F8008CA3D0 /* Date.swift */; };
+		F89F85681B7FC67300242E64 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F85671B7FC67300242E64 /* InterfaceController.swift */; };
+		F89F856A1B7FC67300242E64 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F85691B7FC67300242E64 /* NotificationController.swift */; };
+		F89F856C1B7FC67300242E64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89F856B1B7FC67300242E64 /* Assets.xcassets */; };
+		F89F85711B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */; };
+		F89F85771B7FC67400242E64 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F89F85751B7FC67400242E64 /* Interface.storyboard */; };
+		F89F85791B7FC67400242E64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89F85781B7FC67400242E64 /* Assets.xcassets */; };
+		F89F857D1B7FC67400242E64 /* HealthKitExplorer WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F89F85721B7FC67300242E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F83E09C01B6FF8E7008CA3D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F89F856F1B7FC67300242E64;
+			remoteInfo = "HealthKitExplorer WatchKit 1 App";
+		};
+		F89F857B1B7FC67400242E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F83E09C01B6FF8E7008CA3D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F89F85621B7FC67300242E64;
+			remoteInfo = "HealthKitExplorer WatchKit 1 Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8D62FE11B73550100C9B5FD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F89F857D1B7FC67400242E64 /* HealthKitExplorer WatchKit 1 Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F83E09C81B6FF8E7008CA3D0 /* HealthKitExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +65,16 @@
 		F83E09DD1B6FFA1F008CA3D0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F83E09DF1B6FFA1F008CA3D0 /* HealthKitExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthKitExplorer.entitlements; sourceTree = "<group>"; };
 		F83E09E01B70A9F8008CA3D0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HealthKitExplorer WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89F85661B7FC67300242E64 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F89F85671B7FC67300242E64 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F89F85691B7FC67300242E64 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F89F856B1B7FC67300242E64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F89F856D1B7FC67300242E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthKitExplorer WatchKit 1 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89F85761B7FC67400242E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F89F85781B7FC67400242E64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F89F857A1B7FC67400242E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F89F85601B7FC67300242E64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +101,8 @@
 			children = (
 				F83E09DD1B6FFA1F008CA3D0 /* HealthKit.framework */,
 				F83E09CA1B6FF8E7008CA3D0 /* HealthKitExplorer */,
+				F89F85641B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */,
+				F89F85741B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */,
 				F83E09C91B6FF8E7008CA3D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				F83E09C81B6FF8E7008CA3D0 /* HealthKitExplorer.app */,
+				F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */,
+				F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +132,36 @@
 			path = HealthKitExplorer;
 			sourceTree = "<group>";
 		};
+		F89F85641B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F89F85671B7FC67300242E64 /* InterfaceController.swift */,
+				F89F85691B7FC67300242E64 /* NotificationController.swift */,
+				F89F856B1B7FC67300242E64 /* Assets.xcassets */,
+				F89F856D1B7FC67300242E64 /* Info.plist */,
+				F89F85651B7FC67300242E64 /* Supporting Files */,
+			);
+			path = "HealthKitExplorer WatchKit 1 Extension";
+			sourceTree = "<group>";
+		};
+		F89F85651B7FC67300242E64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F89F85661B7FC67300242E64 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F89F85741B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */ = {
+			isa = PBXGroup;
+			children = (
+				F89F85751B7FC67400242E64 /* Interface.storyboard */,
+				F89F85781B7FC67400242E64 /* Assets.xcassets */,
+				F89F857A1B7FC67400242E64 /* Info.plist */,
+			);
+			path = "HealthKitExplorer WatchKit 1 App";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,15 +172,50 @@
 				F83E09C41B6FF8E7008CA3D0 /* Sources */,
 				F83E09C51B6FF8E7008CA3D0 /* Frameworks */,
 				F83E09C61B6FF8E7008CA3D0 /* Resources */,
+				F8D62FE11B73550100C9B5FD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F89F857C1B7FC67400242E64 /* PBXTargetDependency */,
 			);
 			name = HealthKitExplorer;
 			productName = HealthKitExplorer;
 			productReference = F83E09C81B6FF8E7008CA3D0 /* HealthKitExplorer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F89F85621B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89F85831B7FC67400242E64 /* Build configuration list for PBXNativeTarget "HealthKitExplorer WatchKit 1 Extension" */;
+			buildPhases = (
+				F89F855F1B7FC67300242E64 /* Sources */,
+				F89F85601B7FC67300242E64 /* Frameworks */,
+				F89F85611B7FC67300242E64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F89F85731B7FC67300242E64 /* PBXTargetDependency */,
+			);
+			name = "HealthKitExplorer WatchKit 1 Extension";
+			productName = "HealthKitExplorer WatchKit 1 Extension";
+			productReference = F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		F89F856F1B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89F85821B7FC67400242E64 /* Build configuration list for PBXNativeTarget "HealthKitExplorer WatchKit 1 App" */;
+			buildPhases = (
+				F89F856E1B7FC67300242E64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HealthKitExplorer WatchKit 1 App";
+			productName = "HealthKitExplorer WatchKit 1 App";
+			productReference = F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */;
+			productType = "com.apple.product-type.application.watchapp";
 		};
 /* End PBXNativeTarget section */
 
@@ -111,6 +235,14 @@
 							};
 						};
 					};
+					F89F85621B7FC67300242E64 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = G4V7XHQ6GX;
+					};
+					F89F856F1B7FC67300242E64 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = G4V7XHQ6GX;
+					};
 				};
 			};
 			buildConfigurationList = F83E09C31B6FF8E7008CA3D0 /* Build configuration list for PBXProject "HealthKitExplorer" */;
@@ -127,6 +259,8 @@
 			projectRoot = "";
 			targets = (
 				F83E09C71B6FF8E7008CA3D0 /* HealthKitExplorer */,
+				F89F85621B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */,
+				F89F856F1B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +273,24 @@
 				F83E09D61B6FF8E7008CA3D0 /* LaunchScreen.storyboard in Resources */,
 				F83E09D31B6FF8E7008CA3D0 /* Assets.xcassets in Resources */,
 				F83E09D11B6FF8E7008CA3D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89F85611B7FC67300242E64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89F856C1B7FC67300242E64 /* Assets.xcassets in Resources */,
+				F89F85711B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89F856E1B7FC67300242E64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89F85791B7FC67400242E64 /* Assets.xcassets in Resources */,
+				F89F85771B7FC67400242E64 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +307,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F89F855F1B7FC67300242E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89F856A1B7FC67300242E64 /* NotificationController.swift in Sources */,
+				F89F85681B7FC67300242E64 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F89F85731B7FC67300242E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F89F856F1B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */;
+			targetProxy = F89F85721B7FC67300242E64 /* PBXContainerItemProxy */;
+		};
+		F89F857C1B7FC67400242E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F89F85621B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */;
+			targetProxy = F89F857B1B7FC67400242E64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F83E09CF1B6FF8E7008CA3D0 /* Main.storyboard */ = {
@@ -172,6 +346,14 @@
 				F83E09D51B6FF8E7008CA3D0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F89F85751B7FC67400242E64 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F89F85761B7FC67400242E64 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -194,7 +376,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: stefan@luyten-cypers.be (8X8P8G8DQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: stefan@luyten-cypers.be (8X8P8G8DQM)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -213,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -239,7 +422,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: stefan@luyten-cypers.be (8X8P8G8DQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: stefan@luyten-cypers.be (8X8P8G8DQM)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -252,8 +436,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -267,6 +452,7 @@
 				CODE_SIGN_ENTITLEMENTS = HealthKitExplorer/HealthKitExplorer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HealthKitExplorer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,12 +469,75 @@
 				CODE_SIGN_ENTITLEMENTS = HealthKitExplorer/HealthKitExplorer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HealthKitExplorer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.HealthKitExplorer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		F89F857E1B7FC67400242E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "HealthKitExplorer WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.HealthKitExplorer.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F89F857F1B7FC67400242E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "HealthKitExplorer WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.HealthKitExplorer.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F89F85801B7FC67400242E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = HealthKitExplorer_WatchKit_1_Extension;
+				INFOPLIST_FILE = "HealthKitExplorer WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.HealthKitExplorer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		F89F85811B7FC67400242E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = HealthKitExplorer_WatchKit_1_Extension;
+				INFOPLIST_FILE = "HealthKitExplorer WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.HealthKitExplorer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
 			};
 			name = Release;
 		};
@@ -312,6 +561,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F89F85821B7FC67400242E64 /* Build configuration list for PBXNativeTarget "HealthKitExplorer WatchKit 1 App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89F85801B7FC67400242E64 /* Debug */,
+				F89F85811B7FC67400242E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F89F85831B7FC67400242E64 /* Build configuration list for PBXNativeTarget "HealthKitExplorer WatchKit 1 Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89F857E1B7FC67400242E64 /* Debug */,
+				F89F857F1B7FC67400242E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

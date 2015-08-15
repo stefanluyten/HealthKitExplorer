@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HealthKitExplorer WatchKit 1 App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>HealthKitExplorer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>F83E09C71B6FF8E7008CA3D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89F856F1B7FC67300242E64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8D62FCC1B73550000C9B5FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

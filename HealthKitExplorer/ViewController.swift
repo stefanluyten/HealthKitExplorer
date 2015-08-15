@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let textCellIdentifier = "TextCell"
     let healthKitStore:HKHealthStore = HKHealthStore()
     var ready:  Bool = false
+
     
     @IBOutlet weak var txtOutput: UILabel!
     
@@ -25,7 +26,10 @@ class ViewController: UIViewController {
         let fromDate = "2015-01-19T01:22:18.964Z"
         let toDate = "2015-02-19T01:22:18.964Z"
         self.view.endEditing(true)
-
+        dispatch_async(dispatch_get_main_queue()) {
+            self.txtOutputBox.text = "Fetching data ..."
+        }
+        
         readHeartRateValues(fromDate,to: toDate, latestXSamples: Int(txtNumber.text!)!)
     }
     
@@ -47,8 +51,9 @@ class ViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         var bpm: Int = 0
         
-        var formatter = NSDateFormatter();
-        var formatterEnd = NSDateFormatter();
+        let formatter = NSDateFormatter();
+        let formatterEnd = NSDateFormatter();
+        
 
         formatter.dateFormat = "dd/MM/yyyy HH:mm:ss";
         formatterEnd.dateFormat = "HH:mm:ss";
@@ -63,9 +68,10 @@ class ViewController: UIViewController {
                     self.ready = true
                     
                     dispatch_async(dispatch_get_main_queue()) {
-                        var result: Int
+
                         self.txtOutputBox.text = ""
                         for result in results! {
+                            
                             bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
                             timeStamp = formatter.stringFromDate(result.startDate)
                             timeStampEnd = formatterEnd.stringFromDate(result.endDate)
