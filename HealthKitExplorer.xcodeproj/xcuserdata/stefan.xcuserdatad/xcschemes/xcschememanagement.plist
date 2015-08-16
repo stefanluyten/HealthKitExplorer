@@ -14,6 +14,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>UserData.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>UserKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>F89F856F1B7FC67300242E64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89F858F1B7FEA7300242E64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89F85A11B7FEB5A00242E64</key>
 		<dict>
 			<key>primary</key>
 			<true/>

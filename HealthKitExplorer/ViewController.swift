@@ -8,13 +8,16 @@
 
 import UIKit
 import HealthKit
+import UserKit
+
 
 class ViewController: UIViewController {
     
     let textCellIdentifier = "TextCell"
     let healthKitStore:HKHealthStore = HKHealthStore()
     var ready:  Bool = false
-
+    
+    var dataWatch = UserData()
     
     @IBOutlet weak var txtOutput: UILabel!
     
@@ -40,6 +43,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,16 +55,22 @@ class ViewController: UIViewController {
         let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate.distantPast() , endDate: NSDate(), options: HKQueryOptions.None)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         var bpm: Int = 0
-        
+            
         let formatter = NSDateFormatter();
         let formatterEnd = NSDateFormatter();
+        
+        let formatterWatch = NSDateFormatter();
+        var dataForWatch: String = ""
+        formatterWatch.dateFormat = "dd/MM HH:mm"
         
 
         formatter.dateFormat = "dd/MM/yyyy HH:mm:ss";
         formatterEnd.dateFormat = "HH:mm:ss";
         var timeStamp: String = ""
         var timeStampEnd: String = ""
-    
+        var timeStampWatch: String = ""
+        
+        
         let query = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: latestXSamples, sortDescriptors: [sortDescriptor])
         { (query, results, error) in
                 if error != nil {
@@ -74,10 +85,15 @@ class ViewController: UIViewController {
                             
                             bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
                             timeStamp = formatter.stringFromDate(result.startDate)
+                            timeStampWatch = formatterWatch.stringFromDate(result.startDate)
+                            
                             timeStampEnd = formatterEnd.stringFromDate(result.endDate)
                             self.txtOutputBox.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
                             self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + timeStampEnd + " : " + String(bpm) + "\r\n"
+                            dataForWatch = dataForWatch + timeStampWatch + " - " + String(bpm) + ","
                         }
+                        // dump in storage
+                        self.dataWatch.latestBPMs = dataForWatch
                         
                     }
                 
