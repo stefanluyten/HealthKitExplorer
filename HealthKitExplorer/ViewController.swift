@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 import UserKit
-
+import MyHealthKit
 
 class ViewController: UIViewController {
     
@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     let healthKitStore:HKHealthStore = HKHealthStore()
     var ready:  Bool = false
     
-    var dataWatch = UserData()
+    var dataStorage = UserData()
+    var myHealthKit = MyHealthKit()
+    
     
     @IBOutlet weak var txtOutput: UILabel!
     
@@ -26,14 +28,14 @@ class ViewController: UIViewController {
     @IBAction func bntStart(sender: AnyObject) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
-        let fromDate = "2015-01-19T01:22:18.964Z"
-        let toDate = "2015-02-19T01:22:18.964Z"
         self.view.endEditing(true)
+        myHealthKit.readLatestHeartRateValues(1000)
         dispatch_async(dispatch_get_main_queue()) {
-            self.txtOutputBox.text = "Fetching data ..."
+            //self.txtOutputBox.text = "Fetching data ..."
+            self.txtOutputBox.text = self.dataStorage.latestBPMs
         }
         
-        readHeartRateValues(fromDate,to: toDate, latestXSamples: Int(txtNumber.text!)!)
+
     }
     
     @IBOutlet weak var txtNumber: UITextField!
@@ -42,69 +44,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: Selector("update:"), userInfo: nil, repeats: true)
     }
     
+    @objc dynamic func update(timer:NSTimer!) {
+    }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func readHeartRateValues(from: String, to: String, latestXSamples: Int) -> Int    {
-        let sampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
-        let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate.distantPast() , endDate: NSDate(), options: HKQueryOptions.None)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        var bpm: Int = 0
-            
-        let formatter = NSDateFormatter();
-        let formatterEnd = NSDateFormatter();
-        
-        let formatterWatch = NSDateFormatter();
-        var dataForWatch: String = ""
-        formatterWatch.dateFormat = "dd/MM HH:mm"
-        
-
-        formatter.dateFormat = "dd/MM/yyyy HH:mm:ss";
-        formatterEnd.dateFormat = "HH:mm:ss";
-        var timeStamp: String = ""
-        var timeStampEnd: String = ""
-        var timeStampWatch: String = ""
-        
-        
-        let query = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: latestXSamples, sortDescriptors: [sortDescriptor])
-        { (query, results, error) in
-                if error != nil {
-                    print("Error")
-                } else {
-                    self.ready = true
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-
-                        self.txtOutputBox.text = ""
-                        for result in results! {
-                            
-                            bpm = Int(((result.valueForKeyPath("_quantity._value"))?.floatValue)! * 60.0)
-                            timeStamp = formatter.stringFromDate(result.startDate)
-                            timeStampWatch = formatterWatch.stringFromDate(result.startDate)
-                            
-                            timeStampEnd = formatterEnd.stringFromDate(result.endDate)
-                            self.txtOutputBox.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-                            self.txtOutputBox.text = self.txtOutputBox.text + timeStamp + " - " + timeStampEnd + " : " + String(bpm) + "\r\n"
-                            dataForWatch = dataForWatch + timeStampWatch + " - " + String(bpm) + ","
-                        }
-                        // dump in storage
-                        self.dataWatch.latestBPMs = dataForWatch
-                        
-                    }
-                
-                }
-        }
-        healthKitStore.executeQuery(query)
-            
-        return 0
-    }
-    
-
 
 }
 

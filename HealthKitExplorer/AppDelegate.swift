@@ -8,12 +8,28 @@
 
 import UIKit
 import HealthKit
+import MyHealthKit
+import UserKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let healthStore:HKHealthStore = HKHealthStore()
+    
+    var myHealthKit = MyHealthKit()
+    let dataStorage = UserData()
+    
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: ([NSObject : AnyObject]?) -> Void) {
+        if let infoDictionary = userInfo as? [String: String],
+            message = infoDictionary["message"]
+        {
+            myHealthKit.readLatestHeartRateValues(1000)
+            let responseDictionary = ["message" : dataStorage.latestBPMs]
+            reply(responseDictionary)
+        }
+    }
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

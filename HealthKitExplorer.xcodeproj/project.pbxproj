@@ -22,14 +22,13 @@
 		F89F85791B7FC67400242E64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89F85781B7FC67400242E64 /* Assets.xcassets */; };
 		F89F857D1B7FC67400242E64 /* HealthKitExplorer WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F89F85861B7FD58F00242E64 /* BPMRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F85851B7FD58F00242E64 /* BPMRow.swift */; };
-		F89F85881B7FE74500242E64 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F85871B7FE74500242E64 /* UserData.swift */; };
-		F89F85931B7FEA7300242E64 /* UserData.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F85921B7FEA7300242E64 /* UserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F89F85971B7FEA7300242E64 /* UserData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89F85901B7FEA7300242E64 /* UserData.framework */; };
-		F89F85981B7FEA7300242E64 /* UserData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F89F85901B7FEA7300242E64 /* UserData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F89F85A51B7FEB5A00242E64 /* UserKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F85A41B7FEB5A00242E64 /* UserKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89F85A91B7FEB5A00242E64 /* UserKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89F85A21B7FEB5A00242E64 /* UserKit.framework */; };
 		F89F85AA1B7FEB5A00242E64 /* UserKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F89F85A21B7FEB5A00242E64 /* UserKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F89F85AF1B7FEBA000242E64 /* UserKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F85AE1B7FEBA000242E64 /* UserKit.swift */; };
+		F8E60BF81B80F40300B73496 /* MyHealthKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E60BF71B80F40300B73496 /* MyHealthKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8E60BFC1B80F40300B73496 /* MyHealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E60BF51B80F40300B73496 /* MyHealthKit.framework */; };
+		F8E60BFD1B80F40300B73496 /* MyHealthKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8E60BF51B80F40300B73496 /* MyHealthKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8E60C021B80F44D00B73496 /* MyHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E60C011B80F44D00B73496 /* MyHealthKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,19 +46,19 @@
 			remoteGlobalIDString = F89F85621B7FC67300242E64;
 			remoteInfo = "HealthKitExplorer WatchKit 1 Extension";
 		};
-		F89F85951B7FEA7300242E64 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F83E09C01B6FF8E7008CA3D0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F89F858F1B7FEA7300242E64;
-			remoteInfo = UserData;
-		};
 		F89F85A71B7FEB5A00242E64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F83E09C01B6FF8E7008CA3D0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F89F85A11B7FEB5A00242E64;
 			remoteInfo = UserKit;
+		};
+		F8E60BFA1B80F40300B73496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F83E09C01B6FF8E7008CA3D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8E60BF41B80F40300B73496;
+			remoteInfo = MyHealthKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,7 +70,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F89F85AA1B7FEB5A00242E64 /* UserKit.framework in Embed Frameworks */,
-				F89F85981B7FEA7300242E64 /* UserData.framework in Embed Frameworks */,
+				F8E60BFD1B80F40300B73496 /* MyHealthKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,16 +110,16 @@
 		F89F85781B7FC67400242E64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F89F857A1B7FC67400242E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F85851B7FD58F00242E64 /* BPMRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPMRow.swift; sourceTree = "<group>"; };
-		F89F85871B7FE74500242E64 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F89F85891B7FE94B00242E64 /* HealthKitExplorer WatchKit 1 App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "HealthKitExplorer WatchKit 1 App.entitlements"; sourceTree = "<group>"; };
 		F89F858A1B7FE95800242E64 /* HealthKitExplorer WatchKit 1 Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "HealthKitExplorer WatchKit 1 Extension.entitlements"; sourceTree = "<group>"; };
-		F89F85901B7FEA7300242E64 /* UserData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F89F85921B7FEA7300242E64 /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
-		F89F85941B7FEA7300242E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F85A21B7FEB5A00242E64 /* UserKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89F85A41B7FEB5A00242E64 /* UserKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserKit.h; sourceTree = "<group>"; };
 		F89F85A61B7FEB5A00242E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F85AE1B7FEBA000242E64 /* UserKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKit.swift; sourceTree = "<group>"; };
+		F8E60BF51B80F40300B73496 /* MyHealthKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyHealthKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E60BF71B80F40300B73496 /* MyHealthKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHealthKit.h; sourceTree = "<group>"; };
+		F8E60BF91B80F40300B73496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E60C011B80F44D00B73496 /* MyHealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHealthKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F83E09DE1B6FFA1F008CA3D0 /* HealthKit.framework in Frameworks */,
-				F89F85971B7FEA7300242E64 /* UserData.framework in Frameworks */,
+				F8E60BFC1B80F40300B73496 /* MyHealthKit.framework in Frameworks */,
 				F89F85A91B7FEB5A00242E64 /* UserKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,14 +140,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F89F858C1B7FEA7300242E64 /* Frameworks */ = {
+		F89F859E1B7FEB5A00242E64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F89F859E1B7FEB5A00242E64 /* Frameworks */ = {
+		F8E60BF11B80F40300B73496 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,10 +164,9 @@
 				F83E09CA1B6FF8E7008CA3D0 /* HealthKitExplorer */,
 				F89F85641B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */,
 				F89F85741B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */,
-				F89F85911B7FEA7300242E64 /* UserData */,
 				F89F85A31B7FEB5A00242E64 /* UserKit */,
+				F8E60BF61B80F40300B73496 /* MyHealthKit */,
 				F83E09C91B6FF8E7008CA3D0 /* Products */,
-				F89F85871B7FE74500242E64 /* UserData.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,8 +176,8 @@
 				F83E09C81B6FF8E7008CA3D0 /* HealthKitExplorer.app */,
 				F89F85631B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension.appex */,
 				F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */,
-				F89F85901B7FEA7300242E64 /* UserData.framework */,
 				F89F85A21B7FEB5A00242E64 /* UserKit.framework */,
+				F8E60BF51B80F40300B73496 /* MyHealthKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,15 +230,6 @@
 			path = "HealthKitExplorer WatchKit 1 App";
 			sourceTree = "<group>";
 		};
-		F89F85911B7FEA7300242E64 /* UserData */ = {
-			isa = PBXGroup;
-			children = (
-				F89F85921B7FEA7300242E64 /* UserData.h */,
-				F89F85941B7FEA7300242E64 /* Info.plist */,
-			);
-			path = UserData;
-			sourceTree = "<group>";
-		};
 		F89F85A31B7FEB5A00242E64 /* UserKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,22 +240,31 @@
 			path = UserKit;
 			sourceTree = "<group>";
 		};
+		F8E60BF61B80F40300B73496 /* MyHealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				F8E60BF71B80F40300B73496 /* MyHealthKit.h */,
+				F8E60BF91B80F40300B73496 /* Info.plist */,
+				F8E60C011B80F44D00B73496 /* MyHealthKit.swift */,
+			);
+			path = MyHealthKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F89F858D1B7FEA7300242E64 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F89F85A51B7FEB5A00242E64 /* UserKit.h in Headers */,
-				F89F85931B7FEA7300242E64 /* UserData.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F89F859F1B7FEB5A00242E64 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E60BF21B80F40300B73496 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E60BF81B80F40300B73496 /* MyHealthKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,8 +285,8 @@
 			);
 			dependencies = (
 				F89F857C1B7FC67400242E64 /* PBXTargetDependency */,
-				F89F85961B7FEA7300242E64 /* PBXTargetDependency */,
 				F89F85A81B7FEB5A00242E64 /* PBXTargetDependency */,
+				F8E60BFB1B80F40300B73496 /* PBXTargetDependency */,
 			);
 			name = HealthKitExplorer;
 			productName = HealthKitExplorer;
@@ -328,24 +326,6 @@
 			productReference = F89F85701B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
-		F89F858F1B7FEA7300242E64 /* UserData */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F89F85991B7FEA7300242E64 /* Build configuration list for PBXNativeTarget "UserData" */;
-			buildPhases = (
-				F89F858B1B7FEA7300242E64 /* Sources */,
-				F89F858C1B7FEA7300242E64 /* Frameworks */,
-				F89F858D1B7FEA7300242E64 /* Headers */,
-				F89F858E1B7FEA7300242E64 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UserData;
-			productName = UserData;
-			productReference = F89F85901B7FEA7300242E64 /* UserData.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		F89F85A11B7FEB5A00242E64 /* UserKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89F85AB1B7FEB5A00242E64 /* Build configuration list for PBXNativeTarget "UserKit" */;
@@ -362,6 +342,24 @@
 			name = UserKit;
 			productName = UserKit;
 			productReference = F89F85A21B7FEB5A00242E64 /* UserKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F8E60BF41B80F40300B73496 /* MyHealthKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8E60C001B80F40300B73496 /* Build configuration list for PBXNativeTarget "MyHealthKit" */;
+			buildPhases = (
+				F8E60BF01B80F40300B73496 /* Sources */,
+				F8E60BF11B80F40300B73496 /* Frameworks */,
+				F8E60BF21B80F40300B73496 /* Headers */,
+				F8E60BF31B80F40300B73496 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyHealthKit;
+			productName = MyHealthKit;
+			productReference = F8E60BF51B80F40300B73496 /* MyHealthKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -404,11 +402,11 @@
 							};
 						};
 					};
-					F89F858F1B7FEA7300242E64 = {
+					F89F85A11B7FEB5A00242E64 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = G4V7XHQ6GX;
 					};
-					F89F85A11B7FEB5A00242E64 = {
+					F8E60BF41B80F40300B73496 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = G4V7XHQ6GX;
 					};
@@ -430,8 +428,8 @@
 				F83E09C71B6FF8E7008CA3D0 /* HealthKitExplorer */,
 				F89F85621B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */,
 				F89F856F1B7FC67300242E64 /* HealthKitExplorer WatchKit 1 App */,
-				F89F858F1B7FEA7300242E64 /* UserData */,
 				F89F85A11B7FEB5A00242E64 /* UserKit */,
+				F8E60BF41B80F40300B73496 /* MyHealthKit */,
 			);
 		};
 /* End PBXProject section */
@@ -465,14 +463,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F89F858E1B7FEA7300242E64 /* Resources */ = {
+		F89F85A01B7FEB5A00242E64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F89F85A01B7FEB5A00242E64 /* Resources */ = {
+		F8E60BF31B80F40300B73496 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -488,7 +486,6 @@
 			files = (
 				F83E09CE1B6FF8E7008CA3D0 /* ViewController.swift in Sources */,
 				F83E09E11B70A9F8008CA3D0 /* Date.swift in Sources */,
-				F89F85881B7FE74500242E64 /* UserData.swift in Sources */,
 				F83E09CC1B6FF8E7008CA3D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,18 +500,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F89F858B1B7FEA7300242E64 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F89F859D1B7FEB5A00242E64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F89F85AF1B7FEBA000242E64 /* UserKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E60BF01B80F40300B73496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E60C021B80F44D00B73496 /* MyHealthKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,15 +529,15 @@
 			target = F89F85621B7FC67300242E64 /* HealthKitExplorer WatchKit 1 Extension */;
 			targetProxy = F89F857B1B7FC67400242E64 /* PBXContainerItemProxy */;
 		};
-		F89F85961B7FEA7300242E64 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F89F858F1B7FEA7300242E64 /* UserData */;
-			targetProxy = F89F85951B7FEA7300242E64 /* PBXContainerItemProxy */;
-		};
 		F89F85A81B7FEB5A00242E64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F89F85A11B7FEB5A00242E64 /* UserKit */;
 			targetProxy = F89F85A71B7FEB5A00242E64 /* PBXContainerItemProxy */;
+		};
+		F8E60BFB1B80F40300B73496 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8E60BF41B80F40300B73496 /* MyHealthKit */;
+			targetProxy = F8E60BFA1B80F40300B73496 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -759,50 +757,6 @@
 			};
 			name = Release;
 		};
-		F89F859A1B7FEA7300242E64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = UserData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.UserData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F89F859B1B7FEA7300242E64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = UserData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.UserData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F89F85AC1B7FEB5A00242E64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -850,6 +804,53 @@
 			};
 			name = Release;
 		};
+		F8E60BFE1B80F40300B73496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MyHealthKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.MyHealthKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8E60BFF1B80F40300B73496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MyHealthKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.triton-consulting.MyHealthKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -878,6 +879,7 @@
 				F89F85811B7FC67400242E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F89F85831B7FC67400242E64 /* Build configuration list for PBXNativeTarget "HealthKitExplorer WatchKit 1 Extension" */ = {
 			isa = XCConfigurationList;
@@ -886,20 +888,22 @@
 				F89F857F1B7FC67400242E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		F89F85991B7FEA7300242E64 /* Build configuration list for PBXNativeTarget "UserData" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F89F859A1B7FEA7300242E64 /* Debug */,
-				F89F859B1B7FEA7300242E64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F89F85AB1B7FEB5A00242E64 /* Build configuration list for PBXNativeTarget "UserKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F89F85AC1B7FEB5A00242E64 /* Debug */,
 				F89F85AD1B7FEB5A00242E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8E60C001B80F40300B73496 /* Build configuration list for PBXNativeTarget "MyHealthKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E60BFE1B80F40300B73496 /* Debug */,
+				F8E60BFF1B80F40300B73496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

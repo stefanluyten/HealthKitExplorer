@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MyHealthKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>UserData.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>F8D62FCC1B73550000C9B5FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8E60BF41B80F40300B73496</key>
 		<dict>
 			<key>primary</key>
 			<true/>
